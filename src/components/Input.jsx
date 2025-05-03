@@ -1,4 +1,4 @@
-const Input = ({ label, textarea, id, ...props }) => {
+const Input = ({ ref, label, textarea, id, ...props }) => {
   const classes =
     "w-full p-1 border-b-2 rounded-sm border-stone-300 bg-stone-200 text-stone-600 focus:outline-none focus:border-stone-600 transition-colors";
 
@@ -11,9 +11,9 @@ const Input = ({ label, textarea, id, ...props }) => {
         {label}
       </label>
       {textarea ? (
-        <textarea id={id} className={classes} {...props} />
+        <textarea ref={ref} id={id} className={classes} {...props} />
       ) : (
-        <input id={id} className={classes} {...props} />
+        <input ref={ref} id={id} className={classes} {...props} />
       )}
     </p>
   );
